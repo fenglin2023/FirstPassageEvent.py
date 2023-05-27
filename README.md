@@ -1,4 +1,4 @@
-# firstpassageevent_py
+# FirstPassageEvent_py
 This package provides a fast simulation algorithm for the first passage event of a subordinator, consisiting of a truncated tempered stable subordinator and a compound Poisson process, across a target function. 
 
 
