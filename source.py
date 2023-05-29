@@ -95,10 +95,7 @@ def Psiaux(a, x):
             erf(sqax * math.sqrt(math.pi) / 2) * math.exp(x) * gcax / (C4 * sqax)
         )
     
-def sigma(alpha, x):
-    return (1 + x) ** (alpha / 2)
-
-
+    
 def varphi(alpha, x):
     aux = sigma(alpha, (1 + gl_x) / 2)
     return (alpha / (2 - 2 * alpha)) * x ** (-1 / (1 - alpha)) * np.sum(gl_w * aux * np.exp(-aux * x ** (-alpha / (1 - alpha))))
@@ -118,17 +115,6 @@ def G(alpha, θ, t, x):
 def beta_inc(a, b, x):
     return beta(a, b) * (x ** a) * ((1 - x) ** b)
 
-
-def CDF_overshoot(alpha, b, x):
-    return beta_inc(alpha, 1 - alpha, b / (x + b))[2]
-
-
-def CDF_undershoot(alpha, θ, t, b, x, gj_x=None, gj_w=None):
-    if gj_x is None:
-        gj_x, gj_w = eval_jacobi(n_nodes, -alpha, 0.)
-
-    return 1 - np.sum(gj_w * g(alpha, θ, t, (gj_x + 1) * (b / 2)) * (gj_x > (2 * x / b - 1))) * \
-           (2 / b) ** (alpha - 1) * θ * t * alpha / (gamma(1 - alpha) * g(alpha, θ, t, b))
 
 def Devroye_logconcave(f, a, b, c, L):
     if c != 0:
