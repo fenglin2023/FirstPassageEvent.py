@@ -10,3 +10,4 @@ rand_crossing_subordinator(alpha, ϑ, q, a0, a1, r, ρ, mass, randmass):
 ```
 The subordinator has Levy density $I \lbrace 0 \leq x\leq r \rbrace e^{-qx}x^{-\alpha-1}dx+\lambda(dx)$, and mass $=\lambda(0,\infty)$, randmass is the function that generate the jump size of the compound Poisson component. The boundary is fucntion $c(t)=a_0-a_1*t$.
 The output $(T,U,V)$ contains the first passage time $T$, the undershoot $U$ and the overshoot $V$.
+$\rho$ is a parameter in $(0,1)$ and reader can choose what they like to optimize the running time.
